@@ -33,14 +33,14 @@ The robot’s environment may include:
 
 •  Lines on the floor of the environment. 
 
-Specifically, regarding the lines:
-
-•  Each obstacle may touch at least one line at one of its ends
-
-•  The lines may be placed either along the xx’ axis or the zz’ axis
-
-•  The lines will form various paths, one of which will lie along the shortest (according to Manhattan distance) path from the robot’s initial position to the lamp-target
-
-•  This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
-
-•  This path may be interrupted (segments of the lines may be missing)
+    Specifically, regarding the lines:
+    
+    •  Each obstacle may touch at least one line at one of its ends
+    
+    •  The lines may be placed either along the xx’ axis or the zz’ axis
+    
+    •  The lines will form various paths, one of which will lie along the shortest (according to Manhattan distance) path from the robot’s initial position to the lamp-target
+    
+    •  This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
+    
+    •  This path may be interrupted (segments of the lines may be missing)
