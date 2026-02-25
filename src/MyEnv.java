@@ -3,12 +3,12 @@ import simbad.sim.*;
 import javax.vecmath.Vector3d;
 import javax.vecmath.Vector3f;
 
-/**
- * Class that implements the environment the robot operates on.
+/*
  * @author Antonis Georgosopoulos
+ * Class that implements the environment the robot operates on.
  */
 public class MyEnv extends EnvironmentDescription {
-    /**
+    /*
      * Definition of the environment, adding objects and the robot.
      */
     public MyEnv(){
@@ -84,14 +84,5 @@ public class MyEnv extends EnvironmentDescription {
         Wall wall4 = new Wall(new Vector3d(5,0,3),4,1,this);
         add(wall4);
  */
-
-
-
-
-
-
-
-
-
     }
 }
