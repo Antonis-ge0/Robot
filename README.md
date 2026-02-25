@@ -1,5 +1,5 @@
 # Robot
-**Robot Movement in an Unknown Environment**
+## **Robot Movement in an Unknown Environment** 
 Implementation of a controller for a robot (SimBad) that will guide the robot through a set of obstacles toward its target, which will be defined by the projection of a light source (lamp) on the ground.
 
 **The robot have at its disposal:**
