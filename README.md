@@ -13,7 +13,7 @@ Implementation of a controller for a robot (SimBad) that will guide the robot th
 
 *  11 Infrared (IR) sensors (as many as you wish) mounted underneath the robot for line detection
 
-The robot does not:
+**The robot does not:**
 
 *  Know its position (no use of getCoords in SimBad)
 
@@ -39,6 +39,6 @@ The robot’s environment may include:
     
    *  The lines will form various paths, one of which will lie along the shortest (according to Manhattan distance) path from the robot’s initial position to the lamp-target
     
-   * This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
+     * This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
     
-   * This path may be interrupted (segments of the lines may be missing)
+     * This path may be interrupted (segments of the lines may be missing)
