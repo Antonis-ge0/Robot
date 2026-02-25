@@ -39,6 +39,6 @@ The robot’s environment may include:
     
    *  The lines will form various paths, one of which will lie along the shortest (according to Manhattan distance) path from the robot’s initial position to the lamp-target
     
-     * This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
+      - This path may branch (forks – not crossroads) at various points toward directions that increase the Manhattan distance
     
-     * This path may be interrupted (segments of the lines may be missing)
+      - This path may be interrupted (segments of the lines may be missing)
