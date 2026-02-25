@@ -1,19 +1,15 @@
-
-
 import javax.media.j3d.Transform3D;
 import javax.vecmath.Matrix3d;
 import javax.vecmath.Point3d;
 import simbad.sim.Agent;
 import simbad.sim.RangeSensorBelt;
 
-/**
- *Class implementing useful code to be used for robot behavior.
+/* 
  * @author dvrakas
+ * Class implementing useful code to be used for robot behavior.
  */
-
-
 public class Tools {
-    /**
+    /*
      * Method that returns a Point detected by the sonars.
      * @param rob The robot.
      * @param sonars Sonars on the robot.
@@ -31,8 +27,7 @@ public class Tools {
         return new Point3d(x, 0, z);
     }
 
-
-    /**
+    /*
      * Method that returns the angle of the robot.
      * @param rob The robot.
      * @return The angle of the robot.
@@ -61,7 +56,6 @@ public class Tools {
         return angle;
     }
 
-
     public static double wrapToPi(double a) {
         if (a > Math.PI)
             return a - Math.PI * 2;
@@ -70,4 +64,3 @@ public class Tools {
         return a;
     }
 }
-
