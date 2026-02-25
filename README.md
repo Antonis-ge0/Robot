@@ -4,9 +4,13 @@ Robot Movement in an Unknown Environment
 Implementation of a controller for a robot (SimBad) that will guide the robot through a set of obstacles toward its target, which will be defined by the projection of a light source (lamp) on the ground.
 
 The robot have at its disposal:
+
 • 12 distance sensors (max range: 1.5 m)
+
 • 2 light sensors (in SimBad you can use either the getAverageLuminance() function or getLux() available in versions 1.7 and later – the use of the latter is recommended)
+
 • 8 contact sensors
+
 • 11 Infrared (IR) sensors (as many as you wish) mounted underneath the robot for line detection
 
 The robot does not:
