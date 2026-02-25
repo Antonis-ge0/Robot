@@ -23,7 +23,8 @@ Implementation of a controller for a robot (SimBad) that will guide the robot th
 The robot’s environment may include:
 
 *  An unknown number of obstacles of various shapes and sizes
-*  Lines on the floor of the environment. 
+*  Lines on the floor of the environment.
+  
     Specifically, regarding the lines:
    *  Each obstacle may touch at least one line at one of its ends
    *  The lines may be placed either along the xx’ axis or the zz’ axis
