@@ -3,8 +3,8 @@ import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
 import java.util.Random;
 
-/**
- * @author Antonis Georgosopoulos
+/*
+ *  @author Antonis Georgosopoulos
  *  Class MyRobot that implements the Robot and its behavior. It initialized all the variables needed and defines
  *  robot behavior.
  */
