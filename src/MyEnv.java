@@ -5,8 +5,7 @@ import javax.vecmath.Vector3f;
 
 /**
  * Class that implements the environment the robot operates on.
- * @author Spyridon Drakakis 3582
- * @author Antonis Georgosopoulos 3760
+ * @author Antonis Georgosopoulos
  */
 public class MyEnv extends EnvironmentDescription {
     /**
@@ -19,12 +18,8 @@ public class MyEnv extends EnvironmentDescription {
         light1SetPosition(6,2,2);
         add(new MyRobot(new Vector3d(0, 0, 0),"my robot",false));
 
-
-
-
         Wall wall1 = new Wall(new Vector3d(5,0,1),5,1,this);
         add(wall1);
-
 
         Wall wall2 = new Wall(new Vector3d(5,0,-1),5,1,this);
         add(wall2);
@@ -58,7 +53,6 @@ public class MyEnv extends EnvironmentDescription {
         line2.rotate90(1);
         add(line2);
 
-
         Line line3 = new Line(new Vector3d(-5,0,5),5,this);
         line3.rotate90(1);
         add(line3);
@@ -76,8 +70,6 @@ public class MyEnv extends EnvironmentDescription {
 
         Line line7 = new Line(new Vector3d(0,0,-5),5,this);
         add(line7);
-
-
 /*
         Wall wall = new Wall(new Vector3d(1,0,1),5,1,this);
         wall.rotate90(1);
@@ -91,8 +83,6 @@ public class MyEnv extends EnvironmentDescription {
 
         Wall wall4 = new Wall(new Vector3d(5,0,3),4,1,this);
         add(wall4);
-
-
  */
 
 
