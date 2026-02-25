@@ -21,7 +21,7 @@ The robot does not:
 
 *  Know the position of the target (the robot is being guided toward the target using its light sensors and IR sensors)
 
-**Robot Objective:**The robot’s environment will include one lamp at a height of 2 m (this acts as the target). The robot stops moving as soon as it approaches the projection of the lamp on the ground at a distance equal to or less than 0.6 m. (Obviously, it was needed to conduct experiments to determine the brightness values collected by the sensors when they are this close to the lamp, in order to use them as a stopping condition.)
+**Robot Objective:** The robot’s environment will include one lamp at a height of 2 m (this acts as the target). The robot stops moving as soon as it approaches the projection of the lamp on the ground at a distance equal to or less than 0.6 m. (Obviously, it was needed to conduct experiments to determine the brightness values collected by the sensors when they are this close to the lamp, in order to use them as a stopping condition.)
 
 **Environment:**
 
@@ -31,7 +31,7 @@ The robot’s environment may include:
 
 *  Lines on the floor of the environment. 
 
-   - Specifically, regarding the lines:
+    Specifically, regarding the lines:
     
    *  Each obstacle may touch at least one line at one of its ends
     
