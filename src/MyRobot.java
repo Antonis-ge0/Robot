@@ -1,13 +1,10 @@
-
-
 import simbad.sim.*; //simbad-1.7
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
 import java.util.Random;
 
 /**
- * @author Spyridon Drakakis AEM 3582
- * @author Antonis Georgosopoulos AEM 3760
+ * @author Antonis Georgosopoulos
  *  Class MyRobot that implements the Robot and its behavior. It initialized all the variables needed and defines
  *  robot behavior.
  */
@@ -17,7 +14,6 @@ public class MyRobot extends Agent {
     }
     alState alstate;
     int counter2;
-
     RangeSensorBelt bumpers;
     double iL,iH;
     RangeSensorBelt sonars;
@@ -31,17 +27,14 @@ public class MyRobot extends Agent {
     static double SAFETY =0.5;
     boolean CLOCKWISE;
     double light;
-
-
     Point3d robCod = new Point3d();
-
-    /**
+    
+    /*
      * Constructor for class MyRobot. Initiates position, name as well as its sensors.
      * @param position Starting position of the robot.
      * @param name Name of the robot.
      * @param CLOCKWISE Boolean that indicates if the robot turns clockwise or counterclockwise.
      */
-
     public MyRobot(Vector3d position, String name,boolean CLOCKWISE) {
         super(position, name);
         bumpers = RobotFactory.addBumperBeltSensor(this, 8);
@@ -50,16 +43,13 @@ public class MyRobot extends Agent {
         LL = RobotFactory.addLightSensorLeft(this);
         line = RobotFactory.addLineSensor(this, 11);
         this.CLOCKWISE = CLOCKWISE;
-
-
     }
 
-    /**
+    /*
      * Initializing behavior, namely all the variables that are to be used in the main loop. This method is called once upon
      * beginning of the simulation.
      */
     public void initBehavior() {
-
         beginning = true;
         done = false;
         lineFollow = false;
@@ -70,10 +60,9 @@ public class MyRobot extends Agent {
         alstate = alState.one;
         backing = false;
         counter2 = 0;
-
     }
 
-    /**
+    /*
      * Main loop. This method is called once every interval of the simulation. First, the robot turns to check if there
      * are lines under its position in any direction. Once it checks, the main loop begins.
      * First, it decides if the robot is to move clockwise or counterclockwise
@@ -84,13 +73,15 @@ public class MyRobot extends Agent {
      * If weighted average of its two light sensor inputs is above a certain threshold, it stops.
      */
     public void performBehavior(){
+        
         double neutral = Math.PI/6;
+        
         if(Tools.getAngle(this) >=(Math.PI/2 + neutral)/2*Math.PI && Tools.getAngle(this) <=(3*Math.PI/2 - neutral)/2*Math.PI){
             CLOCKWISE = true;
         }else if (Tools.getAngle(this) <= Math.PI/2- neutral && Tools.getAngle(this)>= 3*Math.PI/2 + neutral) {
             CLOCKWISE = false;
         }
-
+        
         if(!beginning) {
             if (!done) {
                 if (backing) {
@@ -108,9 +99,7 @@ public class MyRobot extends Agent {
                 }else{
                     counter++;
                 }
-
-
-
+                
                 if (alstate == alState.one) {
                     light = (LL.getLux() + LR.getLux());
                     if (!checkLineFollow()) {
@@ -142,14 +131,12 @@ public class MyRobot extends Agent {
                             setRotationalVelocity(0);
                             setTranslationalVelocity(0);
                             done = true;
-
                         }
                     }
 
                     if ((Math.abs(light - iL) >= 0.001)) {
                         iH = light;
                     }
-
 
                     if (!obstacleBumper()) {
                         alstate = alState.one;
@@ -164,7 +151,6 @@ public class MyRobot extends Agent {
                         } else {
                             avoidObstacle();
                         }
-
                 }
             }
         }else{
@@ -177,11 +163,9 @@ public class MyRobot extends Agent {
                 beginning = false;
             }
         }
-
-
     }
 
-    /**
+    /*
      * Method that checks if the robot is on a line and is to follow it.
      * @return A boolean that is true if the line sensors detected a line and false otherwise.
      */
@@ -193,12 +177,10 @@ public class MyRobot extends Agent {
             right += line.hasHit(line.getNumSensors() - i - 1) ? 1 : 0;
             k++;
         }
-
         return left != 0 || right != 0;
-
     }
 
-    /**
+    /*
      * Method that initiates line-following.
      */
     private void initLineFollow(){
@@ -211,10 +193,9 @@ public class MyRobot extends Agent {
         }
         setTranslationalVelocity(0.5);
         this.setRotationalVelocity((left - right) / k * 5);
-
     }
 
-    /**
+    /*
      * Method that circumnavigates an obstacle. Based on the minimum reading of the sonars it calculates the closest
      * point to the robot and follows the perimeter of the obstacle at a safe distance defined above.
      */
@@ -240,10 +221,9 @@ public class MyRobot extends Agent {
         setRotationalVelocity(K1*phRef);
         setTranslationalVelocity(K2*Math.cos(phRef));
        // setTranslationalVelocity(0.5);
-
     }
 
-    /**
+    /*
      * Method that moves the robot backwards if the front bumper sensors are activated and forwards if the backwards if
      * the front sensors are activated. Returns if the sensors hit at all.
      * @return A boolean that is true if the sensors detected a collision and false otherwise.
@@ -259,8 +239,7 @@ public class MyRobot extends Agent {
         return bumpers.getFrontQuadrantHits() > 0 || bumpers.getBackQuadrantHits() >0;
     }
 
-
-    /**
+    /*
      * Method that turns the robot toward the goal (light source). Returns a boolean that is true if the robot is
      * turned towards the goal and false otherwise.
      * @return A boolean that is true if the robot is turned towards the goal and false otherwise.
@@ -278,19 +257,11 @@ public class MyRobot extends Agent {
         }
     }
 
-
-    /**
+    /*
      * Method that moves the robot in a straight line.
      */
     private void UFwd(){
         setRotationalVelocity(0);
         setTranslationalVelocity(0.5);
-
-
     }
-
-
 }
-
-
-
